@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Maya Green</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fa;
+            color: #243247;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #14243b;
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #65b5ff;
+        }
+
+        /* HERO / PERSONAL STATEMENT */
+        .hero {
+            background-color: #14243b;
+            color: white;
+            text-align: center;
+            padding: 85px 20px 100px;
+        }
+
+        .hero .intro {
+            color: #65b5ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero .statement {
+            font-size: 19px;
+            max-width: 750px;
+            margin: auto;
+            color: #d5deeb;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: -35px auto 0;
+            padding: 0 25px 60px;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 22px rgba(20, 36, 59, 0.07);
+        }
+
+        section h2 {
+            font-size: 25px;
+            color: #14243b;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #758196;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .heading-line {
+            width: 50px;
+            height: 4px;
+            background-color: #287bc1;
+            border-radius: 5px;
+            margin: 12px 0 20px;
+        }
+
+        /* SKILLS */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: #eaf3fc;
+            color: #205b91;
+            border: 1px solid #d3e7fa;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e4e9f0;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(20, 36, 59, 0.1);
+        }
+
+        .project-number {
+            color: #287bc1;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            color: #14243b;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #657286;
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            text-decoration: none;
+            color: #287bc1;
+            border: 1px solid #287bc1;
+            padding: 7px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-links a:hover {
+            background-color: #287bc1;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #14243b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 800px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero {
+                padding: 65px 20px 75px;
+            }
+
+            .hero h2 {
+                font-size: 29px;
+            }
+
+            .hero .statement {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 0 15px 40px;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <h1>Maya Green</h1>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+
+    <!-- PERSONAL STATEMENT -->
+    <div class="hero" id="about">
+        <p class="intro">Personal Portfolio</p>
+
+        <h2>Hello, I'm Your Name.</h2>
+
+        <p class="statement">
+            Write your one-sentence professional introduction here.
+            Summarize who you are, what you do, and what you bring
+            to potential employers.
+        </p>
+    </div>
+
+    <main>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="heading-line"></div>
+
+            <p class="section-subtitle">
+                A selection of my technical and professional skills.
+            </p>
+
+            <ul class="skills-list">
+                <li>Skill One</li>
+                <li>Skill Two</li>
+                <li>Skill Three</li>
+                <li>Skill Four</li>
+                <li>Skill Five</li>
+                <li>Skill Six</li>
+                <li>Skill Seven</li>
+                <li>Skill Eight</li>
+            </ul>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="heading-line"></div>
+
+            <p class="section-subtitle">
+                A showcase of projects, research, and work I've completed.
+            </p>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <span class="project-number">PROJECT 01</span>
+
+                    <h3>Project Title One</h3>
+
+                    <p>
+                        Write a brief description of your first project.
+                        Explain its purpose, what you accomplished,
+                        and the tools or skills you used.
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://github.com/YOUR-USERNAME/YOUR-REPO"
+                           target="_blank">View Code</a>
+                        <a href="https://YOUR-DEMO-LINK.com"
+                           target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <span class="project-number">PROJECT 02</span>
+
+                    <h3>Project Title Two</h3>
+
+                    <p>
+                        Write a brief description of your second project.
+                        Highlight the problem you addressed, your approach,
+                        and the result.
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://github.com/YOUR-USERNAME/YOUR-REPO"
+                           target="_blank">View Code</a>
+                        <a href="https://YOUR-DEMO-LINK.com"
+                           target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="project-card">
+                    <span class="project-number">PROJECT 03</span>
+
+                    <h3>Project Title Three</h3>
+
+                    <p>
+                        Write a brief description of your third project.
+                        Include the relevant experience, techniques,
+                        or knowledge demonstrated by your work.
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://github.com/YOUR-USERNAME/YOUR-REPO"
+                           target="_blank">View Code</a>
+                        <a href="https://YOUR-DEMO-LINK.com"
+                           target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Maya Green | Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
